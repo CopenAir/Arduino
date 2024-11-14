@@ -1,5 +1,5 @@
 **mødetid**: 8-9, skriv hvis forsent  
-**mødeform og indhold**: Ugentlige møder om mandagen, fysisk fremmøde. mødet er både til status, videndeling og planlægning. Anchors and engines. Ekstra møder efter behov, samt i code review fasen.  
+**mødeform og indhold**: Ugentlige møder om torsdagen, fysisk fremmøde. mødet er både til status, videndeling og planlægning. Anchors and engines. Ekstra møder efter behov, samt i code review fasen.  
 **referatter**: Referat ved vejledning eller mangel af framøde.  
 **pauser**: Åbent, pause efter behov  
 **specielle behov**: der er ordblinde, autister og adhd'er i gruppen.  
