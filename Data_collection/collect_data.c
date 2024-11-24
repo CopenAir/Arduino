@@ -7,9 +7,9 @@
 #include <time.h>
 
 #define SAMPLE_COUNT 60
-#define BAUD_RATE B9600 // Arduino has to write to this baud rate
+#define BAUD_RATE B9600 // Adjust for your arduino baud rate
 #define DATA_FILE "data.csv"
-#define DEVICE_FILE "/dev/ttyACM0"
+#define DEVICE_FILE "/dev/ttyACM0" // Adjust for your arduino device file
 
 int configureSerialPort(int fd);
 float getAverage(float data[], int size);
