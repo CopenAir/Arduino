@@ -16,8 +16,8 @@ void loop() {
   float B = 3977;
   float T0 = 298.15;
   
-  // Temperature in kelvin based on Steinhart-Hart equation
-  Temp = 1 / (1 / T0 + (1 / B * log((1023 / reading) - 1)));
+  // Temperature in kelvin based on the Steinhart-Hart equation
+  Temp = 1 / (1 / T0 + 1 / B * log((1023.0 / reading) - 1));
 
   // Convert to celcius
   Temp = Temp - 273.15;

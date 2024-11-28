@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
@@ -18,7 +16,7 @@ void collectDataLoop(FILE* dev_file, FILE* data_file);
 // This program collects 60 samples per hour and writes the hourly average to a CSV file 
 // named "data.csv". Sampling begins at the start of the next hour after the program is launched, 
 // ensuring each hour's data is precisely aligned with the clock.
-// Note: You may have to change the device file variable to the one your arduino writes to.
+// Note: This program is configured to linux, and will not work on other systems.
 int main() {
     const char* device_file = DEVICE_FILE;
     int fd = open(device_file, O_RDONLY);
@@ -90,10 +88,9 @@ void collectDataLoop(FILE* dev_file, FILE* data_file) {
                 getAverage(pm10_samples, SAMPLE_COUNT),
                 getAverage(no2_samples, SAMPLE_COUNT),
                 getAverage(temp_samples, SAMPLE_COUNT));
-            fflush(data_file);  // Ensure data is immediately written to file
+            fflush(data_file);
             startUTC = time(NULL);
             count = 0;  // Reset count for next batch
-            printf("Collected data at unix time: %ld\n", startUTC);
         }
 
         if (fgets(buffer, sizeof(buffer), dev_file) != NULL) {
@@ -133,8 +130,7 @@ float getAverage(float data[], int size) {
         }     
     }
 
-    if (n < 1) 
-        return 0;
+    if (n < 1) return 0;
 
     return sum / n;
 }
